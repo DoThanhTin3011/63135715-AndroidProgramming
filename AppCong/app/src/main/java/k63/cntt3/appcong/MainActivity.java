@@ -1,6 +1,8 @@
 package k63.cntt3.appcong;
 
 import android.os.Bundle;
+import android.view.View;
+import android.widget.EditText;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -20,5 +22,22 @@ public class MainActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+    }
+
+    public void XuLyCong(View view){
+      EditText editTextSoA = findViewById(R.id.edtA);
+      EditText editTextSoB = findViewById(R.id.edtB);
+      EditText editKetQua = findViewById(R.id.edtKetQua);
+
+      String strA = editTextSoA.getText().toString();
+      String strB = editTextSoB.getText().toString();
+
+      int soA = Integer.parseInt(strA);
+      int soB = Integer.parseInt(strB);
+
+      int tong = soA + soB;
+
+      String strTong = String.valueOf(tong);
+      editKetQua.setText(strTong);
     }
 }
